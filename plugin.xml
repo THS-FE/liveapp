@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cn.com.ths.wyyx.liveapp" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>liveapp</name>
+    <js-module name="liveapp" src="www/liveapp.js">
+        <clobbers target="cordova.plugins.liveapp" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="liveapp">
+                <param name="android-package" value="cn.com.ths.wyyx.liveapp.liveapp" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/liveapp.java" target-dir="src/cn/com/ths/wyyx/liveapp/liveapp" />
+        <source-file src="src/android/barcodescanner-core-1.8.4.aar" target-dir="libs" />
+        <source-file src="src/android/Fulive-release.aar" target-dir="libs" />
+        <source-file src="src/android/live-app.aar" target-dir="libs" />
+        <source-file src="src/android/uikit-release.aar" target-dir="libs" />
+        <source-file src="src/android/zxing-1.8.4.aar" target-dir="libs" />
+        
+        <framework custom="true" src="src/android/liveapp.gradle" type="gradleReference" />
+    </platform>
+</plugin>
