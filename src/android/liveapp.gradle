@@ -24,4 +24,18 @@ dependencies {
     compile(name: 'Fulive-release', ext: 'aar')
     //整合aar依赖结束
     compile(name: 'live-app', ext: 'aar')
+
+    implementation 'com.android.support:multidex:1.0.2'
+}
+
+ext.postBuildExtras = {
+  android {
+    defaultConfig {
+      multiDexEnabled true
+    }
+    compileOptions {
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_1_8
+    }
+  }
 }
